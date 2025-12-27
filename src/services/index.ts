@@ -4,3 +4,4 @@ export * from "./jwt.js";
 export * from "./sql.js";
 export * from "./objectq.js";
 export * from "./secrets.js";
+export * from "./queue.js";
