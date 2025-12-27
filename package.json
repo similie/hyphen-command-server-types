@@ -1,6 +1,6 @@
 {
   "name": "@similie/hyphen-command-server-types",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Adds common types for Hyphen Command Center modules.",
   "main": "./dist/index.js",
   "scripts": {
@@ -9,8 +9,11 @@
     "release": "npm run build && standard-version"
   },
   "keywords": [],
-  "author": "",
+  "author": "guernica0131 (Similie)",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@similie/ellipsies": "^1.0.16",
     "@similie/http-connector": "^0.0.17",

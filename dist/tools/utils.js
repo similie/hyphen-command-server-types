@@ -1,5 +1,15 @@
 import CryptoJS from "crypto-js";
 import { v4 } from "uuid";
+export const mqttMessageIdentity = (payload) => {
+    try {
+        const value = JSON.parse(payload.toString());
+        value._uid = generateUniqueUUID();
+        return JSON.stringify(value);
+    }
+    catch {
+        return payload.toString();
+    }
+};
 export const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 export const wrapModelSet = (models, wrapOn = "uid") => {
     const map = new Map();

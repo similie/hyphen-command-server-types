@@ -1,4 +1,11 @@
 import type { UUID } from "../models";
+export type MQTTFunctionalResponse = {
+    value: any;
+    key: string;
+    id: string;
+    request: string;
+};
+export declare const mqttMessageIdentity: (payload: Buffer<ArrayBufferLike>) => string;
 export declare const emailRegex: RegExp;
 export declare const wrapModelSet: <T>(models: T[], wrapOn?: keyof T) => (key: keyof T) => T | null | undefined;
 export declare const URL_HOST_PATTERN_FOR_INPUT: RegExp;

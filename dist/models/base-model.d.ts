@@ -1,4 +1,5 @@
-export type UUID = `${string}-${string}-${string}-${string}-${string}`;
+import { type UUID as _UUID } from "@similie/ellipsies";
+export type UUID = _UUID;
 export interface BaseModel {
     id: number;
     createdAt: Date;
