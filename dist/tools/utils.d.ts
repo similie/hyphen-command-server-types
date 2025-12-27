@@ -1,0 +1,37 @@
+import type { UUID } from "../models";
+export declare const emailRegex: RegExp;
+export declare const wrapModelSet: <T>(models: T[], wrapOn?: keyof T) => (key: keyof T) => T | null | undefined;
+export declare const URL_HOST_PATTERN_FOR_INPUT: RegExp;
+export declare const DOMAIN_PATTERN: RegExp;
+export declare function isNumeric(str: string): boolean;
+export declare const generateUniqueUUID: () => UUID;
+export declare function formatDate(date: Date | string, locale?: string, options?: Intl.DateTimeFormatOptions): string;
+export declare function formatMoney(value: number, currencySymbol?: string): string;
+export declare const siteMoneyFormatConfig: (value: number, currencyDivisor?: number, currencySymbol?: string) => string;
+export declare const errorMessageWithCode: (message: string) => {
+    code: number;
+    message: string | undefined;
+};
+export declare const isDomainPattern: (str: string) => boolean;
+export declare const extractFormToJson: <T extends Record<string, any> = {}>(form: FormData) => T;
+export declare const delay: (timeout?: number) => Promise<unknown>;
+export declare const generateRandomInt: (min: number, max: number) => number;
+export declare const generateUniqueId: (numBytes?: number) => string;
+export declare const isUUID: (value: string | UUID) => boolean;
+export declare const validateEmail: (email: string) => boolean;
+export declare const generateRandomPassword: (length: number) => string;
+export declare const fileToUint8Array: (file: File) => Promise<Uint8Array>;
+export declare function sha256String(values: string): string;
+export declare const ParseSocketMessage: <T>(message: string) => T;
+export declare const stripStateFromObject: (obj: any) => any;
+export declare const buildShaValueString: (data: any) => string;
+export declare const hashFileContents: (file: File) => Promise<string>;
+export declare const fileListToFile: (file: File) => Promise<File>;
+export declare const formatMessageServerMessage: (message: string) => any;
+export declare const isOlderThanInDays: (created_at: Date, days: number) => boolean;
+export declare const removeDoubleSpaces: (text: string) => string;
+export declare const removeContentSpace: (text: string) => string;
+export declare const removeHtmlEntities: (text: string) => string;
+export declare function getLast30DaysLabels(locale?: string): string[];
+export declare function humanizeNumber(value: number, precision?: number): string;
+//# sourceMappingURL=utils.d.ts.map
