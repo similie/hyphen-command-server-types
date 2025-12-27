@@ -1,4 +1,4 @@
-import type { UUID } from "../models";
+import type { UUID } from "../models/index.js";
 import CryptoJS from "crypto-js";
 import { v4 } from "uuid";
 export type MQTTFunctionalResponse = {

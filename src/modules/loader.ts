@@ -1,5 +1,5 @@
 // src/modules/loader.ts
-import type { HyphenModule, ModuleContext, LoadedModule } from "./types";
+import type { HyphenModule, ModuleContext, LoadedModule } from "./types.js";
 
 export async function loadModulesFromEnv(
   ctx: ModuleContext,

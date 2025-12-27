@@ -1,6 +1,7 @@
 import { EventEmitter } from "events";
 import { Redis } from "ioredis";
-import Redlock, { Lock } from "redlock";
+import Redlock from "redlock";
+import type { Lock } from "redlock";
 import { randomUUID } from "crypto";
 
 export type LeaderEvents = {

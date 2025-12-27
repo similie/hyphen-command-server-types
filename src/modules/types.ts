@@ -1,5 +1,5 @@
 // src/modules/types.ts
-import type { RedisCache, LeaderElector } from "../services"; // or your Redis wrapper type
+import type { RedisCache, LeaderElector } from "../services/index.js"; // or your Redis wrapper type
 import type { Ellipsies } from "@similie/ellipsies";
 // If you have an Ellipsies instance type, use it. Otherwise keep as `any` and tighten later.
 export type EllipsiesInstance = Ellipsies;

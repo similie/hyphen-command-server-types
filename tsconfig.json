@@ -11,12 +11,15 @@
     // File Layout
     "rootDir": "./src",
     "outDir": "./dist",
-    "moduleResolution": "node",
+    // "moduleResolution": "node",
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "ESNext",
+    // "module": "ESNext",
     "target": "ES2022",
-    "types": [],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    "types": ["node"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -45,7 +48,11 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "redlock": ["node_modules/redlock/dist/index.d.ts"]
+    }
   },
   "include": ["src"]
 }

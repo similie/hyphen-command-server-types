@@ -1,4 +1,4 @@
-import type { UUID } from "../models";
+import type { UUID } from "../models/index.js";
 import { Client } from "pg";
 
 export type ListenerFragments = {
