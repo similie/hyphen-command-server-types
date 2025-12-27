@@ -1,4 +1,4 @@
-import { UUID } from "@similie/ellipsies";
+import type { UUID } from "../models";
 import { Client } from "pg";
 
 export type ListenerFragments = {
@@ -92,6 +92,9 @@ export class SQLService {
     }
 
     for (const key of Object.keys(this._listeners)) {
+      if (!this._listeners[key]) {
+        continue;
+      }
       await this.listenToChannel(this._listeners[key]);
     }
     this.applyClientListeners();

@@ -1,11 +1,17 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    // Decorators + metadata
+    "strictPropertyInitialization": false,
+    // Aliases
+
     // File Layout
     "rootDir": "./src",
     "outDir": "./dist",
-    "moduleResolution": "Node",
-
+    "moduleResolution": "node",
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "ESNext",
@@ -20,7 +26,6 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,

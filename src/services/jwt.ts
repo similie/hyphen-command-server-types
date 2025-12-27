@@ -1,8 +1,12 @@
-import jwt from "jsonwebtoken";
+import jwt, { type Secret, type SignOptions } from "jsonwebtoken";
+
 import { type ExpressResponse } from "@similie/ellipsies";
 
-export const signToken = (payload: object, expiresIn: string = "1h") => {
-  const JWT_SECRET = process.env.JWT_CLIENT_SECRET || "your_jwt_secret";
+export const signToken = (
+  payload: object,
+  expiresIn: SignOptions["expiresIn"] = "1h",
+) => {
+  const JWT_SECRET: Secret = process.env.JWT_CLIENT_SECRET ?? "your_jwt_secret";
   return jwt.sign(payload, JWT_SECRET, { expiresIn });
 };
 
@@ -30,12 +34,12 @@ export const verifyTokenValidity = (
   if (!token) return false;
   const decoded = verifyToken(token);
   if (!decoded) return false;
-  const { exp } = decoded as { exp?: number };
+  const { exp, user } = decoded as { exp?: number; user?: any };
   if (!exp) return false;
   const valid = Date.now() < exp * 1000;
   if (valid) {
     res.locals.user = decoded;
-    req.user = decoded && decoded.user ? decoded.user : undefined;
+    req.user = decoded && user ? user : undefined;
   }
 
   return valid;
