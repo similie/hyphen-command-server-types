@@ -16,7 +16,7 @@ export type ModuleContext = {
   redis: typeof RedisCache;
   leader: LeaderElector;
   identity?: CommandCenterSystemIdentity;
-  log: (msg: string, extra?: Record<string, any>) => void;
+  log: (msg: string, ...args: any[]) => void;
 };
 
 export type ModuleInitResult = {
