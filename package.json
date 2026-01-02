@@ -1,6 +1,6 @@
 {
   "name": "@similie/hyphen-command-server-types",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Adds common types for Hyphen Command Center modules.",
   "main": "./dist/index.js",
   "type": "module",
