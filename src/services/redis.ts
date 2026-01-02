@@ -22,6 +22,16 @@ export class RedisCache {
       console.error("Error connecting to Redis:", err);
     }
   }
+  /**
+   * Broadcasts a message to a Redis channel.
+   * @param channel The Redis channel to publish the message to.
+   * @param data The data to be broadcasted.
+   * @returns A promise that resolves when the message is published.
+   */
+  public static broadcast(channel: string, data: any) {
+    const message = JSON.stringify(data);
+    return this.client.publish(channel, message);
+  }
 
   /**
    * Caches an object under a specified key.
